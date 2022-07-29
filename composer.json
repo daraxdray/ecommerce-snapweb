@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "ext-curl": "*",
         "brian2694/laravel-toastr": "^5.56",
         "ckeditor/ckeditor": "^4.17",
         "doctrine/dbal": "^3.2",
@@ -29,11 +30,11 @@
         "paypal/rest-api-sdk-php": "^1.14",
         "rap2hpoutre/fast-excel": "^3.1",
         "razorpay/razorpay": "2.*",
+        "signifly/laravel-shopify": "^1.2",
         "stripe/stripe-php": "^7.107",
         "symfony/translation": "^5.4",
         "twilio/sdk": "^6.31",
-        "unicodeveloper/laravel-paystack": "^1.0",
-      "ext-curl": "*"
+        "unicodeveloper/laravel-paystack": "^1.0"
     },
     "require-dev": {
         "amirami/localizator": "^0.7.1@alpha",

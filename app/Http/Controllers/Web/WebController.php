@@ -35,9 +35,27 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use function App\CPU\translate;
+use Signifly\Shopify\Shopify;
 
 class WebController extends Controller
 {
+
+    public function shopifyTest(){
+        
+        $shopify = new Shopify(
+            env('SHOPIFY_API_KEY'),
+            env('SHOPIFY_API_PASSWORD'),
+            env('SHOPIFY_DOMAIN'),
+            env('SHOPIFY_API_VERSION')
+        );
+        // $products = $shopify->getProducts();
+
+        
+        $paylod = ["order"=>["line_items"=>[["variant_id"=>40574364942473,"quantity"=>1]]]];
+        $res = $shopify->post('orders.json',$paylod);
+
+        dd($res);
+    }
     public function maintenance_mode()
     {
         $maintenance_mode = Helpers::get_business_settings('maintenance_mode') ?? 0;
